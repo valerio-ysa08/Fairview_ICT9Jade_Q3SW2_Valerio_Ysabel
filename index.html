@@ -28,7 +28,15 @@ body {
     border-radius: 10px;
     justify-content: center;
     background-color: #f8a3d2;
-    box-shadow: 0 6px 18px rgba(46, 4, 29, 0.35)
+    box-shadow: 0 6px 18px rgba(46, 4, 29, 0.35);
+    transition: transform 0.6s ease;
+}
+.container:hover {
+  transform: scale(1.0223)
+}
+
+.btn {
+  background-color: #ffdde9;
 }
 
 </style>
@@ -68,12 +76,64 @@ body {
 <div class="row mb-3 mt-3">
     <div class="col">
 
-    <input type="text" class="form-control text-center"
+    <input type="number" class="form-control text-center"
 
-    id="text" placeholder="Enter here!" name="text">
+    id="showBrand" placeholder="Enter here!" name="text">
+
+    <br>
+        <button type="Submit" class="btn text-dark" onmouseover="multiply()">Find</button>
+
+    <br><br>
+        <button type="button" class="btn" onclick="window.location.reload()">Refresh</button>
 
     </div>
 </div>
+</div>
+
+<div class="container" id="quote">
+        <p class="lea fw-bold display-1"></p>
+  
+  <details ontoggle="message1()">
+            <summary>
+                <p>Recomended Brands:</p>
+            </summary>
+                <br>
+                <i id="message1"></i> 
+        </details>
+      </div>
+
+<div class="container" id="quote">
+        <p class="lea fw-bold display-1"></p>
+  
+  <details ontoggle="message2()">
+            <summary>
+                <p>Where to buy:</p>
+            </summary>
+                <br>
+                <i id="message2"></i> 
+        </details>
+      </div>
+
+</div>
+
+
+<script>
+  function message1(){
+        document.getElementById("message1").innerHTML = "KODAK, SONY, FUJI FILM, CANON";
+    }
+
+  function message2(){
+        document.getElementById("message2").innerHTML = "SM STATION, WONDER PHOTO SHOP, PHOTOLINE DIGITAL";
+    }
+
+function showBrand() {
+  //get value from input field
+  let budget = Number(document.getElementById("budget.value"));
+  let num2 = budget * 10;
+  let finalPrice = num2.toFixed(2); //round of to two deciaml places
+}
+
+</script>
 
 
 </body>
